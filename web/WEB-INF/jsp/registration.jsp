@@ -5,14 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/registration" method="post">
+
+    <img src="${pageContext.request.contextPath}/images/users/b1cfe99611645f56351eb79ac2e2868c.jpg" alt="User image">
+
+    <form action="${pageContext.request.contextPath}/registration" method="post" enctype="multipart/form-data">
 
         <label for="name">Name:
             <input type="text" name="name" id="name">
         </label><br><br>
 
         <label for="birthday">Birthday:
-            <input type="date" name="birthday" id="birthday">
+            <input type="date" name="birthday" id="birthday" required>
+        </label><br><br>
+
+        <label for="imageId">Image:
+            <input type="file" name="image" id="imageId">
         </label><br><br>
 
         <label for="email">Email:

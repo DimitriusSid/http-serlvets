@@ -8,6 +8,7 @@ import com.user.servlet.util.LocalDateFormatter;
 
 public class CreateUserMapper implements Mapper<CreateUserDto, User> {
 
+    private static final String IMAGE_FOLDER = "users/";
     private static final CreateUserMapper INSTANCE = new CreateUserMapper();
 
     private CreateUserMapper() {}
@@ -17,6 +18,7 @@ public class CreateUserMapper implements Mapper<CreateUserDto, User> {
         return User.builder()
                 .name(object.getName())
                 .birthday(LocalDateFormatter.format(object.getBirthday()))
+                .image(IMAGE_FOLDER + object.getImage().getSubmittedFileName())
                 .email(object.getEmail())
                 .password(object.getPassword())
                 .gender(Gender.valueOf(object.getGender()))
