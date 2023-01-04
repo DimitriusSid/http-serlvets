@@ -1,6 +1,7 @@
 package com.user.servlet.appServlets;
 
 import com.user.servlet.service.ImageService;
+import com.user.servlet.util.UrlPath;
 import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 
-@WebServlet("/images/*")
+@WebServlet(UrlPath.IMAGES + "/*")
 public class ImageServlet extends HttpServlet {
 
     private final ImageService imageService = ImageService.getInstance();
